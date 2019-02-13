@@ -1,5 +1,5 @@
 package:
-  name: 'pywasp_flow'
+  name: 'conda_build_fort'
   version: '0.5'
 
 source:
@@ -13,24 +13,13 @@ build:
 requirements:
   run:
     - python
-    - pywasp =0.5
     - {{ pin_compatible('numpy') }}
-    - gdal>=2.0.0
-    - lxml
-    - matplotlib
-    - netCDF4
-    - scipy
-    - pandas
-    - pyproj
-    - xarray
-    - rasterio
-    - shapely
   host:
     - m2w64-toolchain  # [win]
     - libpython  # [win]
     - python
     - setuptools
-    - numpy >=1.16,<2.0.a0
+    - numpy >=1.12,<2.0.a0
   build:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
@@ -39,4 +28,4 @@ requirements:
 
 test:
   imports:
-    - pywasp_flow
+    - conda_build_fort
