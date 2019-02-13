@@ -1,0 +1,24 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module adder ! in 
+    interface  ! in :adder
+        module types_mod ! in :adder:Types_mod.f90
+            integer, public,parameter,optional :: sp=4
+            integer, public,parameter,optional :: dp=8
+            integer, public,parameter,optional :: si=4
+            integer, public,parameter,optional :: di=8
+        end module types_mod
+        module adder ! in :adder:adder.f90
+            use types_mod
+            function adder_func(a,b) result (out) ! in :adder:adder.f90:adder
+                real(kind=4) intent(in) :: a
+                real(kind=4) intent(in) :: b
+                real(kind=4) :: out
+            end function adder_func
+        end module adder
+    end interface 
+end python module adder
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
