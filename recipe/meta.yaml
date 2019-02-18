@@ -1,6 +1,6 @@
 package:
   name: 'conda_build_fort'
-  version: '0.5'
+  version: '0.0.1'
 
 source:
   path: ../
@@ -8,7 +8,6 @@ source:
 build:
   number: 0
   skip: True # [py<35]
-  script: python setup.py install
 
 requirements:
   run:
@@ -19,7 +18,7 @@ requirements:
     - libpython  # [win]
     - python
     - setuptools
-    - numpy >=1.12,<2.0.a0
+    - numpy-devel
   build:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
